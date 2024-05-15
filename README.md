@@ -2,14 +2,15 @@
   <h1> Curso de Docker </h1> 
 </header>
 <div style='display:flex'>
-  <img src='https://img.shields.io/badge/Mosquitto-2.0.11-yellow' />
-  <img src='https://img.shields.io/badge/Java_OpenJDK-17.0.8-orange' />
-  <img src='https://img.shields.io/badge/Apache_Maven-3.9.5-red' />
-  <img src='https://img.shields.io/badge/Paho-MQTTV3-green' />
+  <img src='https://img.shields.io/badge/Docker-blue' />
+  <img src='https://img.shields.io/badge/Python-3.6-blue' />
+  <img src='https://img.shields.io/badge/Postgres-9.6-purple' />
+  <img src='https://img.shields.io/badge/Redis-3.2-red' />
 </div>
 
-Esta é uma aplicação de chat de bate-papo desenvolvida em cima do protocolo
-MQTT.
+Repositorio com aulas do curso de docker da Cod3r.
+Tambem se foi feito um projeto de envio de emails em formato de micro-services e gerenciados com o docker.
+
 
 | :placard: Informações  | 🚀   |
 | -------------  | --- |
