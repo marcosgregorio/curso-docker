@@ -6,15 +6,17 @@ from bottle import Bottle, request
 
 class Sender(Bottle):
     def __init__(self):
-        super.__init__()
+        super().__init__()
         self.route('/', method='POST', callback=self.send)
-        redis_host = os.getenv('REDIS_HOST', 'queue')
-        self.fila = redis.StrictRedis(host='queue', port=6379, db=0)
 
-        db_name = os.getenv('DB_HOST', 'db')
+        redis_host = os.getenv('REDIS_HOST', 'queue')
+        self.fila = redis.StrictRedis(host=redis_host, port=6379, db=0)
+
+        db_host = os.getenv('DB_HOST', 'db')
         db_user = os.getenv('DB_USER', 'postgres')
-        db_host = os.getenv('DB_NAME', 'sender')
-        DSN = f'dbname={db_name} user={db_user} host={db_host}'
+        db_name = os.getenv('DB_NAME', 'sender')
+        db_password = os.getenv('DB_PASSWORD', 'postgres')
+        DSN = f'dbname={db_name} user={db_user} host={db_host}, password={db_password}'
         self.conn = psycopg2.connect(DSN)
 
     def register_message(assunto, mensagem):
@@ -25,7 +27,6 @@ class Sender(Bottle):
         cur.close()
         print("Mensagem registrada com sucesso!")
 
-    @route('/', method='POST')
     def send():
         assunto = request.forms.get('assunto')
         mensagem = request.forms.get('mensagem')
@@ -34,4 +35,4 @@ class Sender(Bottle):
 
 if __name__ == '__main__':
     sender = Sender()
-    run(host='0.0.0.0', port=8080, debug=True)
+    sender.run(host='0.0.0.0', port=8080, debug=True)
