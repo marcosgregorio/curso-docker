@@ -1,6 +1,10 @@
-<header style='display:flex'>
-  <h1> Curso de Docker </h1> 
-</header>
+<header>
+  <h1> 
+    Curso de Docker
+    <img style='width: 50px; heigth: 50px' src='https://github.com/marcosgregorio/curso-docker/assets/78617642/c4003348-128b-46b2-8210-44cb9ff9651a'/>     
+  </h1> 
+ 
+  </header>
 <div style='display:flex'>
   <img src='https://img.shields.io/badge/Docker-blue' />
   <img src='https://img.shields.io/badge/Python-3.6-blue' />
