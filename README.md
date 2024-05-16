@@ -21,3 +21,10 @@ Tambem se foi feito um projeto de envio de emails em formato de micro-services e
 | :sparkles: Nome        | Docker: Ferramenta essencial para desenvolvedores
 | :label: Tecnologias usadas | Docker, Docker compose, Python, Mongo, Postgres
 
+### 💡 Email-Worker-Compose
+  Durante minha prática com o Docker, fiz um exercício que reunia quase tudo o que o Docker tem a oferecer:
+  Imagens, containers e a orquestração desses containers. 
+  
+
+### ⚙️ Configurando o projeto
+ É recomendado utilizar um navegador que permita requisições HTTP por padrão, como o Firefox. Navegadores Chromium bloqueiam por padrão requisições HTTP.
