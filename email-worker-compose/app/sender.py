@@ -19,15 +19,15 @@ class Sender(Bottle):
         DSN = f'dbname={db_name} user={db_user} host={db_host}, password={db_password}'
         self.conn = psycopg2.connect(DSN)
 
-    def register_message(assunto, mensagem):
+    def register_message(self, assunto, mensagem):
         cur = self.conn.cursor()
         SQL = 'INSERT INTO emails (assunto, mensagem) VALUES (%s, %s)'
-        cur.execute(SQL, assunto, mensagem)
+        cur.execute(SQL, (assunto, mensagem))
         self.conn.commit()
         cur.close()
         print("Mensagem registrada com sucesso!")
 
-    def send():
+    def send(self):
         assunto = request.forms.get('assunto')
         mensagem = request.forms.get('mensagem')
         self.register_message(assunto, mensagem)
