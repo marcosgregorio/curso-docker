@@ -37,6 +37,8 @@ Componentes:
 <li>Workers para o envio de e-mail (escalável)</li>
 <li>Aplicação principal</li>
 
+#
+
 _A aplicação inteira é isolada, no sentido de que, cada container é isolado em sua propria rede
 e apenas os containers que possuem acesso a aquela rede conseguem 'ver'/acessar aquele outro container_
 
